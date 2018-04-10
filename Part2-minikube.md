@@ -41,7 +41,7 @@ $ minikube dashboard
 
 2. 
 ```bash
-kubectl proxy # 接著打開瀏覽器輸入 http://127.0.0.1:8001/ui
+$ kubectl proxy # 接著打開瀏覽器輸入 http://127.0.0.1:8001/ui
 ```
 
 <img src="./images/part2/img01.png">
@@ -52,7 +52,7 @@ kubectl proxy # 接著打開瀏覽器輸入 http://127.0.0.1:8001/ui
 $ minikube delete
 ```
 
-## 停止 minikube
+### 停止 minikube
 ```bash
 $ minikube stop
 ```
