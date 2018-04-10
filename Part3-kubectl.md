@@ -69,6 +69,7 @@ $ kubectl get pods --namespace=kube-system
 
 - 如果未指定命名空間 (namespace)，則預設會查詢 default 這個命名空間
 - 預設會有 default、kube-public、kube-system 三個命名空間
+- 如未特別指定，k8s 會使用 default 這個 namespace 當作預設的命名空間部署物件。
 
 ### 刪除資源
 ```bash

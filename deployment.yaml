@@ -1,0 +1,19 @@
+# deployment.yaml
+
+---
+apiVersion: extensions/v1beta1        # 使用 v1 版本的 api
+kind: Deployment      # 類型為 Deployment
+metadata:
+  name: nginx         # Deployment 的名稱
+spec:                 # 其他規格描述(Deployment)
+  replicas: 3         # 運行三個 Pod (replicas: 3)
+  template:           # 描述每個 Pod 規格
+    metadata:
+      labels: 
+        app: nginx    # 標記名稱
+    spec:             # 其他規格描述(Pod)
+      containers:     # 描述容器內容
+      - name: nginx   # 將容器名稱
+        image: nginx  # 使用 nginx 映像檔
+        ports:
+        - containerPort: 80 # 指定使用 80 port
