@@ -1,0 +1,14 @@
+# service.yaml
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: web
+spec:
+  type: NodePort
+  selector:
+    app: webserver      # 指定 Service 綁定 Label 有 app: webserver 的 Pod
+  ports:
+    - protocol: TCP
+      port: 8080

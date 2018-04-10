@@ -25,3 +25,8 @@ spec:                 # 其他規格描述(Deployment)
   - 物件內可以描述 Pod 的內容 (spec) 以及想要運行的個數 (ReplicaSet)。
 - ReplicaSet
   - ReplicaSet 最主要的功能是在確保 Pod 指定的運行數量能達到所設定的數量。
+
+## 部署 Deployment
+```bash
+$ kubectl apply -f deployment.yaml
+```
