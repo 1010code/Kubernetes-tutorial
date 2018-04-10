@@ -33,11 +33,18 @@ k8s 使用 Docker 當作預設的容器環境，所以可以在裡面執行 Dock
 
 ### 開起監控介面
 
-<img src="./images/part2/img01.png">
-
+兩種方式開啟 Dashboard
+1. 
 ```bash
 $ minikube dashboard
 ```
+
+2. 
+```bash
+kubectl proxy # 接著打開瀏覽器輸入 http://127.0.0.1:8001/ui
+```
+
+<img src="./images/part2/img01.png">
 
 ### 刪除 k8s 叢集
 執行此指令會把 k8s 叢集刪除，而下次啟動 minikube 會重新建立叢集。
