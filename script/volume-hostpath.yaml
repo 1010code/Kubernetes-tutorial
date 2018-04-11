@@ -1,0 +1,35 @@
+# volume-hostpath.yaml
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: volume-hostpath-nginx
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    volumeMounts:
+    - mountPath: /tmp/conf     # 一樣掛載到 /tmp/conf，不同的 Pod 不怕
+      name: hostpath-volume
+  volumes:
+  - name: hostpath-volume
+    hostPath:
+      path: /tmp/hostpathdata  # 指定 Node 目錄，可更換成其他目錄# volume-hostpath.yaml
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: volume-hostpath-nginx
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    volumeMounts:
+    - mountPath: /tmp/conf     # 一樣掛載到 /tmp/conf，不同的 Pod 不怕
+      name: hostpath-volume
+  volumes:
+  - name: hostpath-volume
+    hostPath:
+      path: /tmp/hostpathdata  # 指定 Node 目錄，可更換成其他目錄
