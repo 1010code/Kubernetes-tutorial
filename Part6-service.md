@@ -67,6 +67,23 @@ $ kubectl apply -f deployment.yaml
 kubectl apply -f service.yaml  
 ```
 
-輸入 `kubectl describe service web ` 查看詳細資訊可以發現 `Endpoints` 指向了三個 Pod 
+輸入 `kubectl describe service web ` 查看詳細資訊可以發現 `Endpoints` 指向了三個 Pod，此外如果有請求會被導到三個 Pod 其中一個。
 
 <img src="./images/part5/img01.png">
+
+
+查詢目前服務:
+```bash
+$ kubectl get service 
+
+NAME         TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
+kubernetes   ClusterIP   10.96.0.1        <none>        443/TCP          1d
+web          NodePort    10.102.103.185   <none>        8080:31923/TCP   19h
+```
+
+查詢ip:
+```bash
+$ minikube ip
+```
+
+瀏覽器輸入 192.168.99.100:31923 即可連線
