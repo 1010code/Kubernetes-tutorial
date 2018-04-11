@@ -1,0 +1,21 @@
+# ingress.yaml
+
+---
+apiVersion: extensions/v1beta1
+kind: Ingress   # 指定物件種類為 Ingress
+metadata:
+  name: web
+spec:
+  rules:
+  - host: green.myweb.com   # 指定 host 名稱為 green.myweb.com
+    http:
+      paths:
+      - backend:
+          serviceName: green-service  # 綁定名稱為 green-service 的 Service 物件
+          servicePort: 80
+  - host: red.myweb.com   # 指定另一個 host 名稱為 red.myweb.com
+    http:
+      paths:
+      - backend:
+          serviceName: red-service   # 綁定名稱為 red-service 的 Service 物件
+          servicePort: 80

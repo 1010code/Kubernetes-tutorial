@@ -1,0 +1,37 @@
+# ingress.deployment.yaml
+
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+    name: red-nginx
+spec:
+    replicas: 1   # 我們希望 red-service 有1個 Pod 運行 red-nginx
+    template:
+      metadata:
+        labels: 
+          app: red-nginx
+      spec:
+        containers:
+        - name: nginx
+          image: jlptf/red   # 預先做好的 Docker 映像檔
+          ports:
+          - containerPort: 80
+
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+    name: green-nginx
+spec:
+    replicas: 2   # 我們希望 green-service 有兩個 Pod 運行 green-nginx
+    template:
+      metadata:
+        labels: 
+          app: green-nginx
+      spec:
+        containers:
+        - name: nginx
+          image: jlptf/green   # 預先做好的 Docker 映像檔
+          ports:
+          - containerPort: 80
