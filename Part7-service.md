@@ -19,7 +19,11 @@ spec:
   ports:
     - protocol: TCP
       port: 8080
+      nodePort: 30390
+      targetPort: 8080
 ```
+
+- Service可以指定的nodePort只有3000~32767
 
 ## 部署 Service 到 k8s
 
@@ -87,3 +91,9 @@ $ minikube ip
 ```
 
 瀏覽器輸入 192.168.99.100:31923 即可連線
+
+
+###  Service 可以為 Pods 做到以下幾件事情：
+
+- 創建一個ClusterIp，讓Kubernetes Cluster中的其他服務，可以透過這個 ClusterIp 訪問到正在運行中的Pods
+- 創建一個NodePort，讓在 Kubernetes Cluster外但在同一個 Node 上的其他服務，可以透過這個 NodePort 訪問到 Kubernetes Cluster 內正在運行中的 Pods。

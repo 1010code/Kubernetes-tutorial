@@ -10,3 +10,6 @@ spec:                # 其他規格描述
     image: andy6804tw/docker-nodejs-tutorial     # 使用自己 Docker Hub 範例映像檔
     ports:
     - containerPort: 8080   # 指定使用 8080 port
+    env:
+    - name: NODE_ENV
+      value: "production"

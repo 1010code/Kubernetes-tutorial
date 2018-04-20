@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: my-replication-controller
+spec:
+  replicas: 3
+  selector:
+    app: webserver
+  template:
+    metadata:     
+      labels:        # Pod 的標記
+        app: webserver
+    spec:                # 其他規格描述
+      containers:        # 描述容器內容
+      - name: docker-nodejs-tutorial   # 將容器名稱
+        image: andy6804tw/docker-nodejs-tutorial     # 使用自己 Docker Hub 範例映像檔
+        ports:
+        - containerPort: 8080   # 指定使用 8080 port

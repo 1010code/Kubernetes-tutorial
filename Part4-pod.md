@@ -20,6 +20,9 @@ spec:                # 其他規格描述
     image: andy6804tw/docker-nodejs-tutorial     # 使用自己 Docker Hub 範例映像檔
     ports:
     - containerPort: 8080   # 指定使用 8080 port
+    env:                    # 環境變數
+    - name: NODE_ENV
+      value: "production"
 ```
 
 ## 利用 kubectl 部署 yaml 檔
@@ -62,6 +65,12 @@ kubernetes   ClusterIP      10.96.0.1       <none>        443/TCP          1d
 $  minikube ip 
 ```
 
-192.168.99.100:30952  執行
+kubectl logs30952  執行
 
 
+## 查看 log
+查看log的環境變數是否不一樣
+
+```bash
+$ kubectl logs [pod名稱]
+```
