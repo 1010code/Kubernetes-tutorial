@@ -74,3 +74,6 @@ kubectl logs30952  執行
 ```bash
 $ kubectl logs [pod名稱]
 ```
+
+
+https://medium.com/platformer-blog/getting-started-with-kubernetes-deploy-a-docker-container-with-kubernetes-in-5-minutes-eb4be0e96370
